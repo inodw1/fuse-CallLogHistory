@@ -1,0 +1,34 @@
+<App>
+
+        <!-- <CallDetails ux:Global="CallDetails" /> -->
+
+        <JavaScript>
+            var Observable = require("FuseJS/Observable");
+            var Log = require("CallDetails");
+            var val = Observable("Nothing to Show");
+
+            function call() {
+                val.value = Log.callHistory(); 
+                console.log(val);
+            }
+
+            module.exports = {
+                call,
+                val
+            };
+
+        </JavaScript>
+    <StackPanel Alignment="VerticalCenter" Margin="8" ItemSpacing="8">
+        <Panel Height="60" Width="200">
+            <Clicked Handler="{call}" />
+            <Text Value="Display Call History" Alignment="Center" Color="#fff" />
+            <Rectangle CornerRadius="2" Color="#000" />
+        </Panel>
+
+        <Panel>
+        <ScrollView>
+            <Text Value="{val}" Alignment="Center" Color="#000" />
+        </ScrollView>
+        </Panel>
+    </StackPanel>
+</App>

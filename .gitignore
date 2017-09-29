@@ -1,0 +1,8 @@
+# Ignore platfrom specific builds
+build/*
+
+# Ignore Uno code completion files
+.uno/*
+
+# Ignore osx specific
+.DS_Store
